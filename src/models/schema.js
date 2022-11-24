@@ -1260,6 +1260,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "googleMapsPlaceId": {
+                    "name": "googleMapsPlaceId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -2231,5 +2238,6 @@ export const schema = {
             }
         }
     },
-    "version": "099efccc1630b061d2ff744c69255ee9"
+    "codegenVersion": "3.3.1",
+    "version": "ad2f8f768087cbf7c62dfb65c938b00e"
 };

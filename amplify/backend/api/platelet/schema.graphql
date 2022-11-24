@@ -18,7 +18,7 @@ type User
 @model {
   id: ID!
   username: String!
-  cognitoId: ID! @index(name: "byCognitoId", queryField: "getUserByCognitoId")
+  cognitoId: ID! @index(name: "byCognitoId", queryField: "getUserByCognitoId") @auth(rules: [{allow: private, operations: [read]}])
   tenantId: ID! @index(name: "byTenantId")
   isPrimaryAdmin: Int @default(value: "0")
   contact: AddressAndContactDetails
@@ -136,6 +136,7 @@ type Location
   taskAsEstablishment: [Task] @hasMany(indexName: "byEstasblishmentLocation", fields: ["id"])
   comments: [Comment] @hasMany(indexName: "byParent", fields: ["id"])
   disabled: Int @default(value: "0")
+  googleMapsPlaceId: String
 }
 
 type Task
