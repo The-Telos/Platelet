@@ -48,15 +48,6 @@ export enum TaskStatus {
   COMPLETED = "COMPLETED"
 }
 
-export enum Patch {
-  NORTH = "NORTH",
-  WEST = "WEST",
-  EAST = "EAST",
-  SOUTH = "SOUTH",
-  RELIEF = "RELIEF",
-  AIR_AMBULANCE = "AIR_AMBULANCE"
-}
-
 type EagerStatistics = {
   readonly numCancelled?: number | null;
   readonly numCompleted?: number | null;
@@ -384,6 +375,7 @@ type EagerTask = {
   readonly deliverables?: (Deliverable | null)[] | null;
   readonly comments?: (Comment | null)[] | null;
   readonly status?: TaskStatus | keyof typeof TaskStatus | null;
+  readonly isRiderUsingOwnVehicle?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -411,6 +403,7 @@ type LazyTask = {
   readonly deliverables: AsyncCollection<Deliverable>;
   readonly comments: AsyncCollection<Comment>;
   readonly status?: TaskStatus | keyof typeof TaskStatus | null;
+  readonly isRiderUsingOwnVehicle?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
