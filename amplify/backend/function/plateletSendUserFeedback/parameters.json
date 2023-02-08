@@ -1,3 +1,4 @@
 {
-    "plateletSendToEmailAddress": "info@platelet.app"
+    "plateletSendToEmailAddress": "info@platelet.app",
+    "plateletSendFromEmailAddress": "noreply@platelet.app"
 }
